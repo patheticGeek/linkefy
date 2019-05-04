@@ -1,0 +1,168 @@
+.admin-nav {
+  background: #fff;
+  display: flex;
+  color: #141414;
+  margin-bottom: 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.07);
+}
+.admin-nav > .logo {
+  display: flex;
+}
+.admin-nav > .logo > img {
+  height: 50px;
+  width: 50px;
+  padding: 6px;
+  margin: auto;
+}
+.admin-links {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+}
+.admin-nav .nav {
+  height: 100%;
+  display: flex;
+}
+.admin-nav-link {
+  color: #3d3d3d;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0px 5px;
+}
+.admin-nav-link-text {
+  margin: auto 18px;
+}
+.admin-nav-link-line {
+  transition: 0.3s all ease-in-out;
+  background-color: #aaaaaa;
+  width: 0px;
+  height: 2px;
+  margin: 0px auto;
+  border-radius: 5px 5px 0px 0px;
+}
+.admin-nav-link:hover > .admin-nav-link-line {
+  width: 100%;
+}
+.admin-nav-link.active > .admin-nav-link-line {
+  width: 100%;
+  background-color: #575757;
+}
+.admin-nav-link:first-of-type {
+  margin-left: auto;
+}
+.admin-nav-link:last-of-type {
+  margin-right: auto;
+}
+.admin-nav-divider {
+  height: 45px;
+  width: 2px;
+  border-radius: 2px;
+  background-color: #d6d6d6;
+  margin: auto 12px;
+}
+.admin-nav-bio-link {
+  margin: auto 24px;
+  margin-left: 0px;
+  text-align: center;
+}
+.admin-nav-bio-link div {
+  margin: 0px auto;
+}
+.admin-nav-bio-link h3 {
+  display: inline-block;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+}
+.admin-nav-bio-link a {
+  padding: 8px 16px;
+  margin-left: 8px;
+  border-radius: 25px;
+  color: #3c3c3c;
+  background-color: #f3f3f3;
+}
+.admin-nav-bio-link.mobile {
+  display: none;
+}
+
+.addLinks-message {
+  font-size: 16pt;
+  font-weight: 600;
+  color: #a0a0a0;
+  text-align: center;
+  padding: 0px 24px;
+}
+
+.editableInput {
+  padding: 8px 12px 8px 28px;
+  background-image: url('./ic_edit.svg');
+  background-size: 20px auto;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.editableInput.title {
+  font-size: 15pt;
+}
+.editableInput.redirect {
+  font-size: 13pt;
+}
+
+.link-edit > .card-body {
+  flex-direction: row;
+}
+.link-edit .linkProp {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.link-edit .linkProp > input {
+  width: calc(100% - 40px);
+}
+.link-edit .shownSwitch {
+  margin-left: 8px;
+}
+
+.editOptions {
+  display: flex;
+}
+.editOptions > .icon {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.updateLinkBtn {
+  margin-left: auto;
+}
+
+.editOption {
+  transition: 0.3s all ease-in-out;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  display: none;
+}
+.editOption.shown {
+  display: flex;
+}
+.editOption .input-group {
+  flex-grow: 1;
+}
+.editOption .message {
+  margin: auto 0px;
+  font-size: 14pt;
+}
+
+@media screen and (max-width: 850px) {
+  .admin-nav > .logo {
+    display: none;
+  }
+  .admin-nav-divider,
+  .admin-nav-bio-link {
+    display: none;
+  }
+  .admin-nav-bio-link.mobile {
+    display: block;
+    margin-bottom: 12px;
+  }
+  .admin-nav-link-text {
+    margin: 12px 18px;
+  }
+}

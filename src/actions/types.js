@@ -1,0 +1,7 @@
+export const USER_LOGIN = 'USER_LOGIN';
+export const USER_REGISTERED = 'USER_REGISTERED';
+export const USER_LOGOUT = 'USER_LOGOUT';
+export const LINKS_UPDATE = 'LINKS_UPDATE';
+export const USERNAME_UPDATE = 'USERNAME_UPDATE';
+export const AVATAR_UPDATE = 'AVATAR_UPDATE';
+export const REQUST_ERROR = 'REQUST_ERROR';
