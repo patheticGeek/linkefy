@@ -1,15 +1,113 @@
-.user-buttons {
-  --accent-color: #3d3d3d;
+main.user-profile {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px;
+  background: #fff;
+  min-height: calc(100vh - 24px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  --primary-color: #3d3d3d;
+  --secondary-color: #fff;
   --shadow-color: #3d3d3d4d;
+}
+main.user-profile > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+main.user-profile > .loading {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+main.user-profile > .user {
+  display: flex;
+  flex-direction: column;
+}
+main.user-profile > .user > * {
+  margin: 8px auto;
+}
+main.user-profile > .user > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  object-fit: cover;
+  object-position: center;
+  background-color: #fff;
+  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.user-buttons {
+  width: 100%;
+  max-width: 350px;
+  margin: 16px auto;
 }
 
 .user-button {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s all ease-in-out;
   padding: 12px 18px;
-  margin-bottom: 12px;
+  margin: 12px auto;
   border: 2px solid transparent;
+  font-size: 14pt;
   width: 100%;
-  max-width: 270px;
+  max-width: 300px;
 }
 
 .user-button.solid {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.user-button.solid:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.user-button.outline {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: transparent;
+}
+.user-button.outline:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.user-button.semitransparent-white {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.user-button.semitransparent-white:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.user-button.semitransparent-black {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+.user-button.semitransparent-black:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.user-socialLinks {
+  --color: #ff0000;
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+}
+.user-social {
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+}
+.user-social:first-of-type {
+  margin-left: auto;
+}
+.user-social:last-of-type {
+  margin-right: auto;
 }

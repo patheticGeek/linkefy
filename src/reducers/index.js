@@ -20,6 +20,7 @@ const DEFAULT_STATE = {
 //              ]
 //            ]
 // link: { id, title, animation, redirect, created, shown, thumbnail }
+// socialLinks: [ {type: 'facebook', link: 'http://url/'} ]
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   console.log('action happned: ', action);

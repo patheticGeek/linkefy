@@ -310,6 +310,78 @@ select:focus {
 .icon.error {
   background-image: url('./ic_error.svg');
 }
+.icon.facebook {
+  background-image: url('./ic_social/facebook.svg');
+}
+.icon.behance {
+  background-image: url('../assets/ic_social/behance.svg');
+}
+.icon.dribble {
+  background-image: url('../assets/ic_social/dribble.svg');
+}
+.icon.dropbox {
+  background-image: url('../assets/ic_social/dropbox.svg');
+}
+.icon.evanto {
+  background-image: url('../assets/ic_social/evanto.svg');
+}
+.icon.gdrive {
+  background-image: url('../assets/ic_social/gdrive.svg');
+}
+.icon.github {
+  background-image: url('../assets/ic_social/github.svg');
+}
+.icon.hangout {
+  background-image: url('../assets/ic_social/hangout.svg');
+}
+.icon.instagram {
+  background-image: url('../assets/ic_social/instagram.svg');
+}
+.icon.kickstarter {
+  background-image: url('../assets/ic_social/kickstarter.svg');
+}
+.icon.linkedin {
+  background-image: url('../assets/ic_social/linkedin.svg');
+}
+.icon.reddit {
+  background-image: url('../assets/ic_social/reddit.svg');
+}
+.icon.skype {
+  background-image: url('../assets/ic_social/skype.svg');
+}
+.icon.slideshare {
+  background-image: url('../assets/ic_social/slideshare.svg');
+}
+.icon.snapchat {
+  background-image: url('../assets/ic_social/snapchat.svg');
+}
+.icon.soundcloud {
+  background-image: url('../assets/ic_social/soundcloud.svg');
+}
+.icon.spotify {
+  background-image: url('../assets/ic_social/spotify.svg');
+}
+.icon.telegram {
+  background-image: url('../assets/ic_social/telegram.svg');
+}
+.icon.tumblr {
+  background-image: url('../assets/ic_social/tumblr.svg');
+}
+.icon.twitch {
+  background-image: url('../assets/ic_social/twitch.svg');
+}
+.icon.twitter {
+  background-image: url('../assets/ic_social/twitter.svg');
+}
+.icon.vine {
+  background-image: url('../assets/ic_social/vine.svg');
+}
+.icon.whatsapp {
+  background-image: url('../assets/ic_social/whatsapp.svg');
+}
+.icon.youtube {
+  background-image: url('../assets/ic_social/youtube.svg');
+}
 
 .toast {
   display: flex;

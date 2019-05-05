@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Buttons = props => {
-  const { buttonType, shown, redirect, title, thumbnail, animation } = props.link;
+  const { buttonType, link } = props;
+  const { shown, redirect, title, thumbnail, animation } = link;
   let thumbnailDiv = '';
   if (thumbnail !== '') {
     thumbnailDiv = (
@@ -12,12 +13,7 @@ const Buttons = props => {
   }
   if (!shown) return null;
   return (
-    <a
-      className={
-        'user-button ' + buttonType + (animation !== 'none' ? 'animated ' + animation : null)
-      }
-      href={redirect}
-    >
+    <a className={'user-button ' + buttonType + ' animated ' + animation} href={redirect}>
       {thumbnailDiv}
       <span className="user-button-text">{title}</span>
     </a>

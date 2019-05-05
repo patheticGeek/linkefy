@@ -5,7 +5,7 @@ export default class Settings extends Component {
     return (
       <main className="settings">
         <div className="card">
-          <dov className="card-title">User Profile</dov>
+          <div className="card-title">User Profile</div>
         </div>
       </main>
     );

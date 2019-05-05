@@ -40,7 +40,7 @@ export const login = user => dispatch => {
           backgroundType: 'color',
           backgroundColor: '#fff',
           backgroundGradient: '',
-          backgroundImage: '', socialLinks: {}
+          backgroundImage: '', socialLinks: []
           }); //prettier-ignore
         dispatch({
           type: USER_LOGIN,
@@ -52,7 +52,7 @@ export const login = user => dispatch => {
           backgroundType: 'color',
           backgroundColor: '#fff',
           backgroundGradient: '',
-          backgroundImage: '', socialLinks: {}}
+          backgroundImage: '', socialLinks: []}
         }); //prettier-ignore
       }
     });

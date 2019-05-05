@@ -22,7 +22,13 @@ class AddLinks extends Component {
 
   componentWillReceiveProps(newProps) {
     if (this.state.links !== newProps.user.links) {
-      this.setState({ links: newProps.user.links });
+      let orderedLinks = {};
+      Object.keys(newProps.user.links)
+        .sort((a, b) => b - a)
+        .forEach(key => {
+          orderedLinks[key] = newProps.user.links[key];
+        });
+      this.setState({ links: orderedLinks });
     }
   }
 
