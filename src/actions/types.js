@@ -1,7 +1,9 @@
 export const USER_LOGIN = 'USER_LOGIN';
 export const USER_REGISTERED = 'USER_REGISTERED';
 export const USER_LOGOUT = 'USER_LOGOUT';
+export const USER_UPDATE = 'USER_UPDATE';
 export const LINKS_UPDATE = 'LINKS_UPDATE';
 export const USERNAME_UPDATE = 'USERNAME_UPDATE';
 export const AVATAR_UPDATE = 'AVATAR_UPDATE';
-export const REQUST_ERROR = 'REQUST_ERROR';
+export const SOCIAL_LINKS_UPDATE = 'SOCIAL_LINKS_UPDATE';
+export const THEME_UPDATE = 'THEME_UPDATE';

@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Raleway:300,400,600,700');
 
+@font-face {
+  font-family: 'Flaticon';
+  src: url('../assets/Flaticon.eot');
+  src: url('../assets/Flaticon.eot?#iefix') format('embedded-opentype'),
+    url('../assets/Flaticon.woff') format('woff'), url('./Flaticon.ttf') format('truetype'),
+    url('../assets/Flaticon.svg#Flaticon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: 'Flaticon';
+    src: url('../assets/Flaticon.svg#Flaticon') format('svg');
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -78,7 +95,7 @@ button,
   overflow: hidden;
   border-radius: 0.4285rem;
   outline: none;
-  margin: 4px 1px;
+  margin: 4px 8px;
   cursor: pointer;
   background: #344675;
   background-image: -webkit-linear-gradient(to bottom left, #344675, #263148, #344675);
@@ -148,10 +165,9 @@ button.warning,
 }
 .card-action {
   display: flex;
-  flex-direction: column;
   padding: 0px 24px 8px 24px;
 }
-.card-action > button {
+.card-action > button:last-of-type {
   margin-left: auto;
 }
 .card-body .center {
@@ -218,7 +234,7 @@ select:focus {
   outline: none;
 }
 .switch-div {
-  width: 40px;
+  width: 50px;
   height: 20px;
   display: block;
   margin-bottom: 12px;
@@ -231,7 +247,7 @@ select:focus {
   border-radius: 50px;
 }
 .checkbox-label {
-  width: 40px;
+  width: 50px;
   height: 20px;
   background: #464646;
   position: relative;
@@ -246,6 +262,9 @@ select:focus {
   left: 2px;
   cursor: pointer;
 }
+.checkbox-label label:hover {
+  width: 25px;
+}
 .switch-div input[type='checkbox'] {
   display: none;
 }
@@ -254,13 +273,17 @@ select:focus {
   box-shadow: 0 0 2px #21ce86;
 }
 .switch-div input[type='checkbox']:checked ~ .checkbox-label label {
-  left: 21px;
-  transform: rotate(360deg);
+  left: 32px;
+}
+.switch-div input[type='checkbox']:checked ~ .checkbox-label label:hover {
+  left: 23px;
+  width: 25px;
 }
 
-.input-group > label {
+label {
   font-size: 14pt;
   margin-right: 12px;
+  text-transform: capitalize;
 }
 .input-group > input,
 .input-group > select {
@@ -310,77 +333,165 @@ select:focus {
 .icon.error {
   background-image: url('./ic_error.svg');
 }
-.icon.facebook {
-  background-image: url('./ic_social/facebook.svg');
+[class^='flaticon']:before,
+[class*=' flaticon']:before,
+[class^='flaticon']:after,
+[class*=' flaticon']:after {
+  font-family: Flaticon;
+  font-size: 30px;
+  font-style: normal;
+  color: #333;
 }
-.icon.behance {
-  background-image: url('../assets/ic_social/behance.svg');
+
+.flaticon.forrst:before {
+  content: '\f100';
 }
-.icon.dribble {
-  background-image: url('../assets/ic_social/dribble.svg');
+.flaticon.myspace:before {
+  content: '\f101';
 }
-.icon.dropbox {
-  background-image: url('../assets/ic_social/dropbox.svg');
+.flaticon.picasa:before {
+  content: '\f102';
 }
-.icon.evanto {
-  background-image: url('../assets/ic_social/evanto.svg');
+.flaticon.soundcloud:before {
+  content: '\f103';
 }
-.icon.gdrive {
-  background-image: url('../assets/ic_social/gdrive.svg');
+.flaticon.blogger:before {
+  content: '\f104';
 }
-.icon.github {
-  background-image: url('../assets/ic_social/github.svg');
+.flaticon.tumblr:before {
+  content: '\f105';
 }
-.icon.hangout {
-  background-image: url('../assets/ic_social/hangout.svg');
+.flaticon.vine:before {
+  content: '\f106';
 }
-.icon.instagram {
-  background-image: url('../assets/ic_social/instagram.svg');
+.flaticon.slideshare:before {
+  content: '\f107';
 }
-.icon.kickstarter {
-  background-image: url('../assets/ic_social/kickstarter.svg');
+.flaticon.xing:before {
+  content: '\f108';
 }
-.icon.linkedin {
-  background-image: url('../assets/ic_social/linkedin.svg');
+.flaticon.swarm:before {
+  content: '\f109';
 }
-.icon.reddit {
-  background-image: url('../assets/ic_social/reddit.svg');
+.flaticon.youtube:before {
+  content: '\f10a';
 }
-.icon.skype {
-  background-image: url('../assets/ic_social/skype.svg');
+.flaticon.google-drive:before {
+  content: '\f10b';
 }
-.icon.slideshare {
-  background-image: url('../assets/ic_social/slideshare.svg');
+.flaticon.skype:before {
+  content: '\f10c';
 }
-.icon.snapchat {
-  background-image: url('../assets/ic_social/snapchat.svg');
+.flaticon.envato:before {
+  content: '\f10d';
 }
-.icon.soundcloud {
-  background-image: url('../assets/ic_social/soundcloud.svg');
+.flaticon.team-viewer:before {
+  content: '\f10e';
 }
-.icon.spotify {
-  background-image: url('../assets/ic_social/spotify.svg');
+.flaticon.twitch:before {
+  content: '\f10f';
 }
-.icon.telegram {
-  background-image: url('../assets/ic_social/telegram.svg');
+.flaticon.dropbox:before {
+  content: '\f110';
 }
-.icon.tumblr {
-  background-image: url('../assets/ic_social/tumblr.svg');
+.flaticon.yelp:before {
+  content: '\f111';
 }
-.icon.twitch {
-  background-image: url('../assets/ic_social/twitch.svg');
+.flaticon.digg:before {
+  content: '\f112';
 }
-.icon.twitter {
-  background-image: url('../assets/ic_social/twitter.svg');
+.flaticon.vk:before {
+  content: '\f113';
 }
-.icon.vine {
-  background-image: url('../assets/ic_social/vine.svg');
+.flaticon.facebook:before {
+  content: '\f114';
 }
-.icon.whatsapp {
-  background-image: url('../assets/ic_social/whatsapp.svg');
+.flaticon.dribbble:before {
+  content: '\f115';
 }
-.icon.youtube {
-  background-image: url('../assets/ic_social/youtube.svg');
+.flaticon.rss:before {
+  content: '\f116';
+}
+.flaticon.delicious:before {
+  content: '\f117';
+}
+.flaticon.instagram:before {
+  content: '\f118';
+}
+.flaticon.hangout:before {
+  content: '\f119';
+}
+.flaticon.vimeo:before {
+  content: '\f11a';
+}
+.flaticon.lastfm:before {
+  content: '\f11b';
+}
+.flaticon.telegram:before {
+  content: '\f11c';
+}
+.flaticon.periscope:before {
+  content: '\f11d';
+}
+.flaticon.flickr:before {
+  content: '\f11e';
+}
+.flaticon.wattpad:before {
+  content: '\f11f';
+}
+.flaticon.yahoo:before {
+  content: '\f120';
+}
+.flaticon.snapchat:before {
+  content: '\f121';
+}
+.flaticon.whatsapp:before {
+  content: '\f122';
+}
+.flaticon.foursquare:before {
+  content: '\f123';
+}
+.flaticon.path:before {
+  content: '\f124';
+}
+.flaticon.github:before {
+  content: '\f125';
+}
+.flaticon.deviantart:before {
+  content: '\f126';
+}
+.flaticon.html:before {
+  content: '\f127';
+}
+.flaticon.pinterest:before {
+  content: '\f128';
+}
+.flaticon.reddit:before {
+  content: '\f129';
+}
+.flaticon.twitter:before {
+  content: '\f12a';
+}
+.flaticon.kickstarter:before {
+  content: '\f12b';
+}
+.flaticon.linkedin:before {
+  content: '\f12c';
+}
+.flaticon.spotify:before {
+  content: '\f12d';
+}
+.flaticon.google-plus:before {
+  content: '\f12e';
+}
+.flaticon.behance:before {
+  content: '\f12f';
+}
+.flaticon.stumbleupon:before {
+  content: '\f130';
+}
+.flaticon.bebo:before {
+  content: '\f131';
 }
 
 .toast {
@@ -410,6 +521,33 @@ select:focus {
   font-size: 14pt;
   margin: auto;
   margin-left: 0px;
+}
+
+.progress {
+  display: flex;
+  height: 0.5rem;
+  overflow: hidden;
+  font-size: 0.65625rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.875rem;
+  margin: 10px 0px;
+  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  transition: width 0.6s ease;
+  border-radius: 0.875rem;
+  background: #3358f4;
+  background-image: -webkit-linear-gradient(to bottom left, #3358f4, #1d8cf8, #3358f4);
+  background-image: -webkit-linear-gradient(top right, #3358f4, #1d8cf8, #3358f4);
+  background-image: linear-gradient(to bottom left, #3358f4, #1d8cf8, #3358f4);
+  background-size: 210% 210%;
+  background-position: top right;
 }
 
 @media screen and (max-width: 600px) {

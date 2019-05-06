@@ -1,4 +1,12 @@
-import { USER_LOGIN, USER_REGISTERED, USER_LOGOUT, LINKS_UPDATE, REQUST_ERROR } from './types.js';
+import {
+  USER_LOGIN,
+  USER_REGISTERED,
+  USER_LOGOUT,
+  LINKS_UPDATE,
+  USER_UPDATE,
+  SOCIAL_LINKS_UPDATE,
+  THEME_UPDATE
+} from './types.js';
 import firebase from '../firebase.js';
 
 export const login = user => dispatch => {
@@ -64,9 +72,6 @@ export const logout = () => dispatch => {
     .signOut()
     .then(function() {
       dispatch({ type: USER_LOGOUT });
-    })
-    .catch(function(error) {
-      console.log(error);
     });
 };
 
@@ -89,9 +94,38 @@ export const updateLinks = (uid, links) => dispatch => {
     .update({ links })
     .then(function() {
       dispatch({ type: LINKS_UPDATE, links, message: 'Links updated' });
-    })
-    .catch(error => {
-      console.log('error', error);
-      dispatch({ type: REQUST_ERROR, message: 'Cannot update links' });
+    });
+};
+
+export const updateUser = (uid, user) => dispatch => {
+  return firebase
+    .firestore()
+    .collection('users')
+    .doc(uid)
+    .update({ ...user })
+    .then(function() {
+      dispatch({ type: USER_UPDATE, message: 'Profile updated', user });
+    });
+};
+
+export const updateSocialLinks = (uid, socialLinks) => dispatch => {
+  return firebase
+    .firestore()
+    .collection('users')
+    .doc(uid)
+    .update({ socialLinks })
+    .then(function() {
+      dispatch({ type: SOCIAL_LINKS_UPDATE, message: 'Social links updated', socialLinks });
+    });
+};
+
+export const updateTheme = (uid, theme) => dispatch => {
+  return firebase
+    .firestore()
+    .collection('users')
+    .doc(uid)
+    .update({ ...theme })
+    .then(function() {
+      dispatch({ type: THEME_UPDATE, message: 'Theme updated', theme });
     });
 };

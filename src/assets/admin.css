@@ -135,8 +135,9 @@
 
 .editOption {
   transition: 0.3s all ease-in-out;
-  padding: 6px 12px;
-  margin-bottom: 8px;
+  padding: 0px 12px;
+  margin: 0px 24px;
+  margin-bottom: 16px;
   display: none;
 }
 .editOption.shown {
@@ -148,6 +149,61 @@
 .editOption .message {
   margin: auto 0px;
   font-size: 14pt;
+}
+
+.avatar-settings {
+  display: flex;
+  margin-top: 12px;
+}
+.avatar-settings > .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  object-fit: cover;
+  object-position: center;
+  background-color: #fff;
+  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.avatar-settings > .bgimg {
+  width: 200px;
+  height: 150px;
+  object-fit: contain;
+  object-position: center;
+}
+.avatar-settings > .edit {
+  padding: 12px 0px;
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+}
+.avatar-settings > .edit > label {
+  margin: auto 0px;
+}
+
+.uploadButtonWrapper {
+  margin: auto 0px;
+  position: relative;
+  overflow: hidden;
+}
+.uploadButtonWrapper > button {
+  margin: 0px;
+}
+.uploadButtonWrapper input[type='file'] {
+  position: absolute;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.demo {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (max-width: 850px) {

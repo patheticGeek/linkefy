@@ -15,6 +15,7 @@ import Signin from './components/Signin';
 import Admin from './components/Admin';
 import AddLinks from './components/AddLinks';
 import UserProfile from './components/UserProfile';
+import Settings from './components/Settings';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistedState = loadState();
@@ -73,7 +74,7 @@ class Router extends React.Component {
             path="/admin/settings"
             render={() => (
               <Admin page="settings">
-                <AddLinks />
+                <Settings />
               </Admin>
             )}
           />

@@ -137,7 +137,17 @@ class AddLinks extends Component {
                 className="form-input limit-width"
               >
                 <option value="none">None</option>
+                <option value="bounce">Bounce</option>
+                <option value="flash">Flash</option>
+                <option value="pulse">Pulse</option>
+                <option value="rubberBand">RubberBand</option>
+                <option value="shake">Shake</option>
+                <option value="swing">Swing</option>
+                <option value="tada">Tada</option>
                 <option value="wobble">Wobble</option>
+                <option value="jello">Jello</option>
+                <option value="heartBeat">HeartBeat</option>
+                <option value="fadeIn">FadeIn</option>
               </select>
             </div>
             <button className="button primary right" onClick={this.createNewLink}>

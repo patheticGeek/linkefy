@@ -20,12 +20,13 @@ class Admin extends Component {
 
   render() {
     if (!this.props.logedin) return <Redirect to="/" />;
+    if (this.props.user === null) return <Redirect to="/" />;
     if (this.props.user.username === '') return <Redirect to="/signin" />;
     return (
       <main className="admin">
         <div className="admin-nav">
           <div className="logo">
-            <img src="./icon_512.png" alt="logo" />
+            <img src="/icon_512.png" alt="logo" />
           </div>
           <div className="admin-links">
             <div className="admin-nav-bio-link mobile">
@@ -88,9 +89,9 @@ class Admin extends Component {
   }
 }
 
-export default connect(({ logedin, user: { username }, success, error, message }) => ({
+export default connect(({ logedin, user, success, error, message }) => ({
   logedin,
-  user: { username },
+  user,
   success,
   error,
   message

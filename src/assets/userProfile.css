@@ -12,6 +12,7 @@ main.user-profile {
   --shadow-color: #3d3d3d4d;
 }
 main.user-profile > * {
+  color: var(--primary-color);
   margin-left: auto;
   margin-right: auto;
 }
@@ -45,16 +46,51 @@ main.user-profile > .user > img {
 }
 
 .user-button {
-  display: block;
+  display: flex;
   text-decoration: none;
   text-align: center;
   transition: 0.3s all ease-in-out;
-  padding: 12px 18px;
+  padding: 4px;
   margin: 12px auto;
   border: 2px solid transparent;
   font-size: 14pt;
   width: 100%;
   max-width: 300px;
+}
+.user-button > img {
+  height: 30px;
+  width: 30px;
+  margin: auto 0px;
+  object-fit: cover;
+}
+.user-button > span {
+  margin: 0px auto;
+  padding: 4px 12px;
+}
+
+.user-button.round-solid > img,
+.user-button.round-outline > img {
+  border-radius: 15px;
+}
+.user-button.round-solid {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 100px;
+}
+.user-button.round-solid:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+.user-button.round-outline {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: transparent;
+  border-radius: 100px;
+}
+.user-button.round-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .user-button.solid {
@@ -94,16 +130,23 @@ main.user-profile > .user > img {
 }
 
 .user-socialLinks {
-  --color: #ff0000;
   margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
 }
 .user-social {
-  width: 30px;
-  height: 30px;
-  background-size: 30px;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 8px 12px;
+  margin-right: 8px;
+  display: flex;
+}
+.user-social > .flaticon::before {
+  color: var(--primary-color);
+}
+.user-social > i {
+  margin: auto;
 }
 .user-social:first-of-type {
   margin-left: auto;

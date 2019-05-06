@@ -109,52 +109,62 @@ export default class EditableLink extends Component {
             </div>
           </div>
         </div>
+        <div className={'editOption ' + (this.state.editOption === 'Animation' ? 'shown' : '')}>
+          <div className="input-group">
+            <label htmlFor="animation">Animation: </label>
+            <select
+              name="animation"
+              onChange={this.handleInput}
+              value={this.state.animation}
+              className="form-input limit-width"
+            >
+              <option value="none">None</option>
+              <option value="bounce">Bounce</option>
+              <option value="flash">Flash</option>
+              <option value="pulse">Pulse</option>
+              <option value="rubberband">RubberBand</option>
+              <option value="shake">Shake</option>
+              <option value="swing">Swing</option>
+              <option value="tada">Tada</option>
+              <option value="wobble">Wobble</option>
+              <option value="jello">Jello</option>
+              <option value="heartbeat">Heartbeat</option>
+              <option value="fadein">FadeIn</option>
+            </select>
+          </div>
+        </div>
+        <div className={'editOption ' + (this.state.editOption === 'Thumbnail' ? 'shown' : '')}>
+          <div className="input-group">
+            <label htmlFor="newThumbnail">Thumbnail: </label>
+            <input
+              type="text"
+              name="newThumbnail"
+              className="form-input limit-width"
+              placeholder="http://url/to/image"
+              defaultValue={this.state.thumbnail}
+              onChange={this.handleInput}
+            />
+          </div>
+        </div>
+        <div className={'editOption ' + (this.state.editOption === 'Delete' ? 'shown' : '')}>
+          <span className="message">This will delete the link</span>
+          <button className="warning updateLinkBtn" onClick={this.deleteLink}>
+            Delete
+          </button>
+        </div>
         <div className="card-action">
-          <div className={'editOption ' + (this.state.editOption === 'Animation' ? 'shown' : '')}>
-            <div className="input-group">
-              <label htmlFor="animation">Animation: </label>
-              <select
-                name="animation"
-                onChange={this.handleInput}
-                value={this.state.animation}
-                className="form-input limit-width"
-              >
-                <option value="none">None</option>
-                <option value="wobble">Wobble</option>
-              </select>
-            </div>
-          </div>
-          <div className={'editOption ' + (this.state.editOption === 'Thumbnail' ? 'shown' : '')}>
-            <div className="input-group">
-              <label htmlFor="newThumbnail">Thumbnail: </label>
-              <input
-                type="text"
-                name="newThumbnail"
-                className="form-input limit-width"
-                placeholder="http://url/to/image"
-                defaultValue={this.state.thumbnail}
-                onChange={this.handleInput}
-              />
-            </div>
-          </div>
-          <div className={'editOption ' + (this.state.editOption === 'Delete' ? 'shown' : '')}>
-            <span className="message">This will delete the link</span>
-            <button className="warning updateLinkBtn" onClick={this.deleteLink}>
-              Delete
-            </button>
-          </div>
           <div className="editOptions">
             <div className="icon animation" title="Animation" onClick={this.showSection} />
             <div className="icon thumbnail" title="Thumbnail" onClick={this.showSection} />
             <div className="icon delete" title="Delete" onClick={this.showSection} />
-            <button
-              className="updateLinkBtn"
-              style={{ display: this.state.unsaved ? 'inline-block' : 'none' }}
-              onClick={this.updateLink}
-            >
-              Update link
-            </button>
           </div>
+          <button
+            className="updateLinkBtn"
+            style={{ display: this.state.unsaved ? 'inline-block' : 'none' }}
+            onClick={this.updateLink}
+          >
+            Update link
+          </button>
         </div>
       </div>
     );

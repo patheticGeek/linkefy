@@ -14,6 +14,7 @@ export default class UserProfile extends Component {
     links: {},
     primaryColor: '',
     secondaryColor: '',
+    shadowColor: '',
     buttonType: '',
     backgroundType: '',
     backgroundColor: '',
@@ -42,7 +43,7 @@ export default class UserProfile extends Component {
             .forEach(key => {
               orderedLinks[key] = userData.links[key];
             });
-          that.setState({ ...userData, links: orderedLinks, loaded: true });
+          that.setState({ ...userData, links: orderedLinks, loaded: true, uid: 'none' });
         }
       });
   }
@@ -73,7 +74,18 @@ export default class UserProfile extends Component {
     }
 
     return (
-      <main className="user-profile">
+      <main
+        className="user-profile"
+        style={{
+          background: this.state.backgroundType === 'gradient' && this.state.backgroundGradient,
+          backgroundColor: this.state.backgroundType === 'color' && this.state.backgroundColor,
+          backgroundImage:
+            this.state.backgroundType === 'image' && 'url("' + this.state.backgroundImage + '")',
+          '--primary-color': this.state.primaryColor,
+          '--secondary-color': this.state.secondaryColor,
+          '--shadow-color': this.state.shadowColor
+        }}
+      >
         <div className="user">
           <img src={this.state.avatar} alt="user" />
           <h2>{this.state.name}</h2>
@@ -84,15 +96,14 @@ export default class UserProfile extends Component {
           })}
         </div>
         <div className="user-socialLinks">
-          {this.state.socialLinks.map(socialLink => (
-            <a
-              className={'user-social icon ' + socialLink.type}
-              href={socialLink.link}
-              key={socialLink.type}
-            >
-              {' '}
-            </a>
-          ))}
+          {this.state.socialLinks.map(link => {
+            if (link.to === '') return null;
+            return (
+              <a className="user-social" href={link.to} key={link.type}>
+                <i className={'flaticon ' + link.type} />
+              </a>
+            );
+          })}
         </div>
       </main>
     );
