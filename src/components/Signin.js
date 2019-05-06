@@ -21,7 +21,12 @@ class Signin extends Component {
   registerUser = () => {
     const username = this.state.username;
     const that = this;
-    if (this.state.username === '' || 'about' || 'contact' || 'privacy-policy') {
+    if (
+      this.state.username === '' ||
+      this.state.username === 'about' ||
+      this.state.username === 'contact' ||
+      this.state.username === 'privacy-policy'
+    ) {
       this.setState({ notAvail: true });
     } else {
       let taken;
