@@ -29,7 +29,7 @@ const DEFAULT_STATE = {
 // socialLinks: [ {type: 'facebook', link: 'http://url/'} ]
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
-  console.log('action happned: ', action);
+  //console.log('action happned: ', action);
   switch (action.type) {
     case USER_LOGIN:
       return { ...state, logedin: true, user: action.user };

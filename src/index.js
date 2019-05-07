@@ -24,7 +24,6 @@ const store = createStore(rootReducer, persistedState, composeEnhancer(applyMidd
 store.subscribe(() => {
   var state = store.getState();
   saveState({ ...state, success: false, error: false, message: '' });
-  console.log('store updated: ', store.getState());
 });
 
 class Router extends React.Component {
