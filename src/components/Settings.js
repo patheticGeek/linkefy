@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import firebase from '../firebase.js';
 import Buttons from './Buttons';
 import FileUploader from 'react-firebase-file-uploader';
+import '../assets/userProfile.css';
 
 class Settings extends Component {
   state = {

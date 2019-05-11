@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import './assets/index.css';
 import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
@@ -10,12 +9,14 @@ import { connect } from 'react-redux';
 import { login, logout } from './actions';
 import { loadState, saveState } from './localStorage';
 import firebase from './firebase';
-import Home from './components/Home';
-import Signin from './components/Signin';
-import Admin from './components/Admin';
-import AddLinks from './components/AddLinks';
-import UserProfile from './components/UserProfile';
-import Settings from './components/Settings';
+import './assets/index.css';
+
+const Home = lazy(() => import('./components/Home'));
+const Signin = lazy(() => import('./components/Signin'));
+const Admin = lazy(() => import('./components/Admin'));
+const AddLinks = lazy(() => import('./components/AddLinks'));
+const UserProfile = lazy(() => import('./components/UserProfile'));
+const Settings = lazy(() => import('./components/Settings'));
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistedState = loadState();
@@ -47,38 +48,40 @@ class Router extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/signin" component={Signin} />
-          <Route
-            exact
-            path="/admin"
-            render={() => (
-              <Admin page="links">
-                <AddLinks />
-              </Admin>
-            )}
-          />
-          <Route
-            exact
-            path="/admin/analytics"
-            render={() => (
-              <Admin page="analytics">
-                <AddLinks />
-              </Admin>
-            )}
-          />
-          <Route
-            exact
-            path="/admin/settings"
-            render={() => (
-              <Admin page="settings">
-                <Settings />
-              </Admin>
-            )}
-          />
-          <Route exact path="/:username" component={UserProfile} />
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signin" component={Signin} />
+            <Route
+              exact
+              path="/admin"
+              render={() => (
+                <Admin page="links">
+                  <AddLinks />
+                </Admin>
+              )}
+            />
+            <Route
+              exact
+              path="/admin/analytics"
+              render={() => (
+                <Admin page="analytics">
+                  <AddLinks />
+                </Admin>
+              )}
+            />
+            <Route
+              exact
+              path="/admin/settings"
+              render={() => (
+                <Admin page="settings">
+                  <Settings />
+                </Admin>
+              )}
+            />
+            <Route exact path="/:username" component={UserProfile} />
+          </Switch>
+        </Suspense>
       </BrowserRouter>
     );
   }
