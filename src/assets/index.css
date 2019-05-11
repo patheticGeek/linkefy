@@ -554,6 +554,9 @@ label {
   .nav-link {
     display: none;
   }
+  .nav-content {
+    padding: 12px 0px;
+  }
 }
 @media screen and (max-width: 850px) {
   .toast {
