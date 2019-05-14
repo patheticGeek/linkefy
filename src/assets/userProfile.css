@@ -35,7 +35,6 @@ main.user-profile > .user > img {
   border-radius: 60px;
   object-fit: cover;
   object-position: center;
-  background-color: #fff;
   box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
