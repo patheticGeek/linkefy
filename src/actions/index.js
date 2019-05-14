@@ -105,6 +105,7 @@ export const updateUser = (uid, user) => dispatch => {
     .update({ ...user })
     .then(function() {
       dispatch({ type: USER_UPDATE, message: 'Profile updated', user });
+      setTimeout(() => dispatch({ type: 'reset' }), 3500);
     });
 };
 
@@ -116,6 +117,7 @@ export const updateSocialLinks = (uid, socialLinks) => dispatch => {
     .update({ socialLinks })
     .then(function() {
       dispatch({ type: SOCIAL_LINKS_UPDATE, message: 'Social links updated', socialLinks });
+      setTimeout(() => dispatch({ type: 'reset' }), 3500);
     });
 };
 
@@ -127,5 +129,6 @@ export const updateTheme = (uid, theme) => dispatch => {
     .update({ ...theme })
     .then(function() {
       dispatch({ type: THEME_UPDATE, message: 'Theme updated', theme });
+      setTimeout(() => dispatch({ type: 'reset' }), 3500);
     });
 };

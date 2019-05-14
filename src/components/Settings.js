@@ -353,7 +353,7 @@ class Settings extends Component {
               link={{
                 animation: 'none',
                 created: '2019-05-04 20:14:06',
-                redirect: 'http://url',
+                redirect: '#',
                 shown: true,
                 thumbnail: '',
                 title: 'Demo button'
@@ -364,7 +364,7 @@ class Settings extends Component {
               link={{
                 animation: 'none',
                 created: '2019-05-04 20:14:06',
-                redirect: 'http://url',
+                redirect: '#',
                 shown: true,
                 thumbnail:
                   'https://user-images.githubusercontent.com/101482/29592647-40da86ca-875a-11e7-8bc3-941700b0a323.png',
@@ -376,7 +376,7 @@ class Settings extends Component {
               link={{
                 animation: 'none',
                 created: '2019-05-04 20:14:06',
-                redirect: 'http://url',
+                redirect: '#',
                 shown: true,
                 thumbnail: '',
                 title: 'A Demo button with a very very long text for gossippy titles'
