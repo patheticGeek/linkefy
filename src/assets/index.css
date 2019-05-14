@@ -17,6 +17,17 @@
   }
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.loading {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
 body {
   margin: 0;
   padding: 0;

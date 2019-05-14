@@ -1,3 +1,9 @@
+.admin {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .admin-nav {
   background: #fff;
   display: flex;

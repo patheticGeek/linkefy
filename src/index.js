@@ -9,14 +9,13 @@ import { connect } from 'react-redux';
 import { login, logout } from './actions';
 import { loadState, saveState } from './localStorage';
 import firebase from './firebase';
+import loadingSvg from './assets/loading.svg';
 import './assets/index.css';
 
 const Home = lazy(() => import('./components/Home'));
 const Signin = lazy(() => import('./components/Signin'));
 const Admin = lazy(() => import('./components/Admin'));
-const AddLinks = lazy(() => import('./components/AddLinks'));
 const UserProfile = lazy(() => import('./components/UserProfile'));
-const Settings = lazy(() => import('./components/Settings'));
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistedState = loadState();
@@ -48,37 +47,13 @@ class Router extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<img className="loading" src={loadingSvg} alt="loading" />}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/signin" component={Signin} />
-            <Route
-              exact
-              path="/admin"
-              render={() => (
-                <Admin page="links">
-                  <AddLinks />
-                </Admin>
-              )}
-            />
-            <Route
-              exact
-              path="/admin/analytics"
-              render={() => (
-                <Admin page="analytics">
-                  <AddLinks />
-                </Admin>
-              )}
-            />
-            <Route
-              exact
-              path="/admin/settings"
-              render={() => (
-                <Admin page="settings">
-                  <Settings />
-                </Admin>
-              )}
-            />
+            <Route exact path="/admin" render={() => <Admin page="links" />} />
+            <Route exact path="/admin/analytics" render={() => <Admin page="analytics" />} />
+            <Route exact path="/admin/settings" render={() => <Admin page="settings" />} />
             <Route exact path="/:username" component={UserProfile} />
           </Switch>
         </Suspense>

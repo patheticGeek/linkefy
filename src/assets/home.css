@@ -15,9 +15,14 @@ main.home > header {
   display: flex;
   overflow: hidden;
   padding: 12px 24px;
+  padding-top: 70px;
   position: relative;
-  height: calc(100vh - 24px);
+  height: calc(100vh - 94px);
   width: calc(100% - 48px);
+}
+main.home > header:first-of-type {
+  padding: 12px 24px;
+  height: calc(100vh - 24px);
 }
 
 .squares {

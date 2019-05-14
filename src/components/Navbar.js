@@ -14,11 +14,11 @@ export default class Navbar extends Component {
     window.removeEventListener('scroll', this.changeColor);
   }
   changeColor = () => {
-    if (document.documentElement.scrollTop > 99 || document.body.scrollTop > 99) {
+    if (document.documentElement.scrollTop > 150 || document.body.scrollTop > 150) {
       this.setState({
         navClass: 'collapsed'
       });
-    } else if (document.documentElement.scrollTop < 100 || document.body.scrollTop < 100) {
+    } else if (document.documentElement.scrollTop < 151 || document.body.scrollTop < 151) {
       this.setState({
         navClass: ''
       });
