@@ -15,8 +15,8 @@ const config = {
 firebase.initializeApp(config);
 
 export const uiConfig = {
-  signInFlow: 'popup',
-  signInSuccessUrl: '#',
+  signInFlow: 'redirect',
+  signInSuccessUrl: '/signin',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.GithubAuthProvider.PROVIDER_ID,

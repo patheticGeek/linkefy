@@ -43,6 +43,8 @@ export default class UserProfile extends Component {
             .forEach(key => {
               orderedLinks[key] = userData.links[key];
             });
+          document.querySelector('title').innerText = userData.name;
+          document.querySelector('link').setAttribute('href', userData.avatar);
           that.setState({ ...userData, links: orderedLinks, loaded: true, uid: 'none' });
         }
       });

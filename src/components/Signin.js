@@ -4,6 +4,7 @@ import { register } from '../actions';
 import { Redirect } from 'react-router-dom';
 import firebase, { uiConfig } from '../firebase.js';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import '../assets/signin.css';
 
 class Signin extends Component {
   state = { username: '', notAvail: false };

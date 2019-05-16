@@ -27,7 +27,7 @@ export const login = user => dispatch => {
           backgroundColor,
           backgroundGradient,
           backgroundImage,
-          socialLinks
+          socialLinks, utmParam
         } = doc.data(); //prettier-ignore
         dispatch({ type: USER_LOGIN, user: { 
           uid: user.uid, name, avatar, 
@@ -35,12 +35,12 @@ export const login = user => dispatch => {
           primaryColor, secondaryColor,
           buttonType, backgroundType,
           backgroundColor, backgroundGradient,
-          backgroundImage, socialLinks }
+          backgroundImage, socialLinks, utmParam }
         }); //prettier-ignore
       } else {
         const { name, email, avatar, uid, emailVerified } = user;
         firebase.firestore().collection('users').doc(uid).set({
-          name, avatar, email, username: '', links: [], emailVerified,
+          name, avatar, email, username: '', links: {}, emailVerified,
           primaryColor: '#3d3d3d',
           secondaryColor: '#fff',
           shadowColor: '#3d3d3d4d',
@@ -48,11 +48,11 @@ export const login = user => dispatch => {
           backgroundType: 'color',
           backgroundColor: '#fff',
           backgroundGradient: '',
-          backgroundImage: '', socialLinks: []
+          backgroundImage: '', socialLinks: {}, utmParam: {}
           }); //prettier-ignore
         dispatch({
           type: USER_LOGIN,
-          user: {uid, name, avatar, email, username: '', links: [], emailVerified,
+          user: {uid, name, avatar, email, username: '', links: {}, emailVerified,
           primaryColor: '#3d3d3d',
           secondaryColor: '#fff',
           shadowColor: '#3d3d3d4d',
@@ -60,7 +60,7 @@ export const login = user => dispatch => {
           backgroundType: 'color',
           backgroundColor: '#fff',
           backgroundGradient: '',
-          backgroundImage: '', socialLinks: []}
+            backgroundImage: '', socialLinks: {}, utmParam: {}}
         }); //prettier-ignore
       }
     });
@@ -105,7 +105,7 @@ export const updateUser = (uid, user) => dispatch => {
     .update({ ...user })
     .then(function() {
       dispatch({ type: USER_UPDATE, message: 'Profile updated', user });
-      setTimeout(() => dispatch({ type: 'reset' }), 3500);
+      setTimeout(() => dispatch({ type: 'reset' }), 3200);
     });
 };
 
@@ -117,7 +117,7 @@ export const updateSocialLinks = (uid, socialLinks) => dispatch => {
     .update({ socialLinks })
     .then(function() {
       dispatch({ type: SOCIAL_LINKS_UPDATE, message: 'Social links updated', socialLinks });
-      setTimeout(() => dispatch({ type: 'reset' }), 3500);
+      setTimeout(() => dispatch({ type: 'reset' }), 3200);
     });
 };
 
@@ -129,6 +129,6 @@ export const updateTheme = (uid, theme) => dispatch => {
     .update({ ...theme })
     .then(function() {
       dispatch({ type: THEME_UPDATE, message: 'Theme updated', theme });
-      setTimeout(() => dispatch({ type: 'reset' }), 3500);
+      setTimeout(() => dispatch({ type: 'reset' }), 3200);
     });
 };

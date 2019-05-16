@@ -1,0 +1,42 @@
+main.signin {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #171941;
+  background-image: url('../assets/dots.webp');
+  background-size: contain;
+  color: #fff;
+}
+main.signin > .brand-logo {
+  padding: 24px 48px;
+  user-select: none;
+  display: flex;
+}
+main.signin > .brand-logo > img {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+}
+main.signin > .brand-logo > span {
+  margin-right: auto;
+  font-size: 16pt;
+  display: flex;
+}
+main.signin > .brand-logo > span > h2 {
+  margin: auto;
+  margin-left: 12px;
+}
+main.signin > .card {
+  max-width: 300px;
+  margin: auto;
+  padding: 24px 0px;
+}
+main.signin > .card > .card-title {
+  font-size: 15pt;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card.signin input {
+  color: #fff;
+}

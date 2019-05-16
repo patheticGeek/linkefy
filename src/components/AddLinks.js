@@ -63,7 +63,6 @@ class AddLinks extends Component {
         .forEach(key => {
           orderedLinks[key] = links[key];
         });
-      console.log(orderedLinks);
       this.setState({ links: orderedLinks });
       this.props.updateLinks(this.state.uid, orderedLinks);
     }
