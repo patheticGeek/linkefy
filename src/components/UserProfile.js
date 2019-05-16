@@ -97,16 +97,16 @@ export default class UserProfile extends Component {
             return <Buttons link={link} buttonType={this.state.buttonType} key={key} />;
           })}
         </div>
-        {/* <div className="user-socialLinks">
-          {this.state.socialLinks.map(link => {
-            if (link.to === '') return null;
+        <div className="user-socialLinks">
+          {Object.entries(this.state.socialLinks).map(([key, link]) => {
+            if (link === '' || !link) return null;
             return (
-              <a className="user-social" href={link.to} key={link.type}>
-                <i className={'flaticon ' + link.type} />
+              <a className="user-social" href={link} key={key}>
+                <i className={'flaticon ' + key} />
               </a>
             );
           })}
-        </div> */}
+        </div>
       </main>
     );
   }
