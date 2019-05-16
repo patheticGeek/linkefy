@@ -97,7 +97,7 @@ export default class UserProfile extends Component {
             return <Buttons link={link} buttonType={this.state.buttonType} key={key} />;
           })}
         </div>
-        <div className="user-socialLinks">
+        {/* <div className="user-socialLinks">
           {this.state.socialLinks.map(link => {
             if (link.to === '') return null;
             return (
@@ -106,7 +106,7 @@ export default class UserProfile extends Component {
               </a>
             );
           })}
-        </div>
+        </div> */}
       </main>
     );
   }
