@@ -47,10 +47,14 @@ class AddLinks extends Component {
         .split('.')[0]
         .replace('T', ' ');
       const timestamp = new Date().getTime();
+      let redirect = this.state.linkRedirect;
+      if (!redirect.includes('https://') || !redirect.includes('http://')) {
+        redirect = 'https://' + redirect;
+      }
       const newLink = {
         title: this.state.linkTitle,
         animation: this.state.linkAnimation,
-        redirect: this.state.linkRedirect,
+        redirect,
         created,
         shown: true,
         thumbnail: this.state.linkThumbnail

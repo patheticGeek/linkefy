@@ -1,4 +1,4 @@
-main.user-profile {
+.user-profile {
   display: flex;
   flex-direction: column;
   padding: 12px 24px;
@@ -11,25 +11,25 @@ main.user-profile {
   --secondary-color: #fff;
   --shadow-color: #3d3d3d4d;
 }
-main.user-profile > * {
+.user-profile > * {
   color: var(--primary-color);
   margin-left: auto;
   margin-right: auto;
 }
-main.user-profile > .loading {
+.user-profile > .loading {
   margin: auto;
   width: 50px;
   height: 50px;
 }
 
-main.user-profile > .user {
+.user-profile > .user {
   display: flex;
   flex-direction: column;
 }
-main.user-profile > .user > * {
+.user-profile > .user > * {
   margin: 8px auto;
 }
-main.user-profile > .user > img {
+.user-profile > .user > img {
   width: 120px;
   height: 120px;
   border-radius: 60px;

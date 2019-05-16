@@ -337,7 +337,7 @@ class Settings extends Component {
         </div>
 
         <div
-          className="card demo"
+          className="card demo user-profile"
           style={{
             backgroundColor: this.state.backgroundType === 'color' && this.state.backgroundColor,
             background: this.state.backgroundType === 'gradient' && this.state.backgroundGradient,
@@ -348,6 +348,10 @@ class Settings extends Component {
             '--shadow-color': this.state.shadowColor
           }}
         >
+          <div className="user">
+            <img src={this.state.avatar} alt="user" />
+            <h2>{this.state.name}</h2>
+          </div>
           <div className="card-body">
             <Buttons
               link={{
@@ -383,6 +387,39 @@ class Settings extends Component {
               }}
               buttonType={this.state.buttonType}
             />
+
+            <div className="user-socialLinks" style={{ marginTop: '0px' }}>
+              <a className="user-social" href="/admin/settings">
+                <i className="flaticon facebook" />
+              </a>
+              <a className="user-social" href="/admin/settings">
+                <i className="flaticon twitter" />
+              </a>
+              <a className="user-social" href="/admin/settings">
+                <i className="flaticon reddit" />
+              </a>
+              <a className="user-social" href="/admin/settings">
+                <i className="flaticon whatsapp" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card-title">
+            <h2>Social Links</h2>
+          </div>
+          <div className="card-body">
+            <h3>Comming Soon!</h3>
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card-title">
+            <h2>UTM Paramters</h2>
+          </div>
+          <div className="card-body">
+            <h3>Comming Soon!</h3>
           </div>
         </div>
       </main>
