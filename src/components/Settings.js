@@ -413,15 +413,6 @@ class Settings extends Component {
             <h3>Comming Soon!</h3>
           </div>
         </div>
-
-        <div className="card">
-          <div className="card-title">
-            <h2>UTM Paramters</h2>
-          </div>
-          <div className="card-body">
-            <h3>Comming Soon!</h3>
-          </div>
-        </div>
       </main>
     );
   }

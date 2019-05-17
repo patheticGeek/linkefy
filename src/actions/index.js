@@ -27,7 +27,7 @@ export const login = user => dispatch => {
           backgroundColor,
           backgroundGradient,
           backgroundImage,
-          socialLinks, utmParam
+          socialLinks
         } = doc.data(); //prettier-ignore
         dispatch({ type: USER_LOGIN, user: { 
           uid: user.uid, name, avatar, 
@@ -35,7 +35,7 @@ export const login = user => dispatch => {
           primaryColor, secondaryColor,
           buttonType, backgroundType,
           backgroundColor, backgroundGradient,
-          backgroundImage, socialLinks, utmParam }
+          backgroundImage, socialLinks }
         }); //prettier-ignore
       } else {
         const { name, email, avatar, uid, emailVerified } = user;
@@ -48,7 +48,7 @@ export const login = user => dispatch => {
           backgroundType: 'color',
           backgroundColor: '#fff',
           backgroundGradient: '',
-          backgroundImage: '', socialLinks: {}, utmParam: {}
+          backgroundImage: '', socialLinks: {}
           }); //prettier-ignore
         dispatch({
           type: USER_LOGIN,
@@ -60,7 +60,7 @@ export const login = user => dispatch => {
           backgroundType: 'color',
           backgroundColor: '#fff',
           backgroundGradient: '',
-            backgroundImage: '', socialLinks: {}, utmParam: {}}
+            backgroundImage: '', socialLinks: {}}
         }); //prettier-ignore
       }
     });

@@ -17,6 +17,8 @@ const Signin = lazy(() => import('./components/Signin'));
 const Admin = lazy(() => import('./components/Admin'));
 const UserProfile = lazy(() => import('./components/UserProfile'));
 
+console.log(process.env.REACT_APP_WEBSITE_NAME);
+
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistedState = loadState();
 const store = createStore(rootReducer, persistedState, composeEnhancer(applyMiddleware(thunk)));
