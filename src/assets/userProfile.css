@@ -135,6 +135,9 @@
   justify-items: center;
   margin-bottom: 50px;
 }
+.demo .user-socialLinks {
+  margin-bottom: 0px;
+}
 .user-social {
   color: var(--primary-color);
   text-decoration: none;

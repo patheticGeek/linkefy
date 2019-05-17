@@ -5,6 +5,7 @@ import firebase from '../firebase.js';
 import Buttons from './Buttons';
 import FileUploader from 'react-firebase-file-uploader';
 import '../assets/userProfile.css';
+import SocialLinks from './SocialLinks';
 
 class Settings extends Component {
   state = {
@@ -404,15 +405,7 @@ class Settings extends Component {
             </div>
           </div>
         </div>
-
-        <div className="card">
-          <div className="card-title">
-            <h2>Social Links</h2>
-          </div>
-          <div className="card-body">
-            <h3>Comming Soon!</h3>
-          </div>
-        </div>
+        <SocialLinks />
       </main>
     );
   }

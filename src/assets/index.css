@@ -176,6 +176,7 @@ button.warning,
 }
 .card-action {
   display: flex;
+  flex-direction: column;
   padding: 0px 24px 8px 24px;
 }
 .card-action > button:last-of-type {
@@ -227,7 +228,7 @@ select {
   color: #444;
   font-size: 16px;
   font-weight: 600;
-  padding: 0.6em 1.4em 0.5em 0.8em;
+  padding: 12px 18px;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -297,8 +298,15 @@ label {
   text-transform: capitalize;
 }
 .input-group > input,
-.input-group > select {
+.input-group > select,
+.input-group > button,
+.input-group > .button {
   display: inline-block;
+  margin-bottom: 12px;
+}
+.input-group > button,
+.input-group > .button {
+  margin-left: 10px;
 }
 .right {
   margin-left: auto;
@@ -387,7 +395,7 @@ label {
 .flaticon.youtube:before {
   content: '\f10a';
 }
-.flaticon.google-drive:before {
+.flaticon.googledrive:before {
   content: '\f10b';
 }
 .flaticon.skype:before {
@@ -396,7 +404,7 @@ label {
 .flaticon.envato:before {
   content: '\f10d';
 }
-.flaticon.team-viewer:before {
+.flaticon.teamviewer:before {
   content: '\f10e';
 }
 .flaticon.twitch:before {
