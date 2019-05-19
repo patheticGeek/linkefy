@@ -45,7 +45,7 @@ export default class SocialLink extends Component {
           Update
         </button>
         <button
-          className="primary"
+          className="warning"
           onClick={this.deleteLink}
           style={{
             display: this.state.link === '' ? 'inline-block' : 'none'

@@ -84,10 +84,10 @@ class SocialLinks extends Component {
               <option value="slideshare">Slideshare</option>
               <option value="googledrive">Googledrive</option>
               <option value="twitch">Twitch</option>
-              <option value="dribble">Dribble</option>
+              <option value="dribbble">Dribbble</option>
               <option value="telegram">Telegram</option>
               <option value="github">Github</option>
-              <option value="pintrest">Pintrest</option>
+              <option value="pinterest">Pinterest</option>
               <option value="twitter">Twitter</option>
               <option value="reddit">Reddit</option>
               <option value="kickstarter">Kickstarter</option>
