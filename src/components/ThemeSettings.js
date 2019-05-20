@@ -194,12 +194,12 @@ class ThemeSettings extends Component {
                     <FileUploader
                       accept="image/png,image/jpeg"
                       name="background"
-                      filename={this.state.uid}
                       storageRef={firebase.storage().ref('backgrounds')}
                       onUploadStart={this.handlebgiUploadStart}
                       onUploadError={this.handlebgiUploadError}
                       onUploadSuccess={this.handlebgiUploadSuccess}
                       onProgress={this.handlebgiProgress}
+                      randomizeFilename
                     />
                   </div>
                   {this.state.bgiUploading ? (

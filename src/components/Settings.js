@@ -1,11 +1,13 @@
 import { logout, updateUser, updateTheme } from './../actions/index';
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
 import firebase from '../firebase.js';
 import FileUploader from 'react-firebase-file-uploader';
+import loadingSvg from '../assets/loading.svg';
 import '../assets/userProfile.css';
-import SocialLinks from './SocialLinks';
-import ThemeSettings from './ThemeSettings';
+
+const SocialLinks = lazy(() => import('./SocialLinks'));
+const ThemeSettings = lazy(() => import('./ThemeSettings'));
 
 class Settings extends Component {
   state = {
@@ -146,8 +148,11 @@ class Settings extends Component {
             </button>
           </div>
         </div>
-        <ThemeSettings />
-        <SocialLinks />
+
+        <Suspense fallback={<img className="loading" src={loadingSvg} alt="loading" />}>
+          <ThemeSettings />
+          <SocialLinks />
+        </Suspense>
       </main>
     );
   }

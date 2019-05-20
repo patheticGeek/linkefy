@@ -1,11 +1,10 @@
-import React, { Component, Suspense, lazy } from 'react';
+import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import loadingSvg from '../assets/loading.svg';
 import '../assets/animate.css';
 import '../assets/admin.css';
-const AddLinks = lazy(() => import('./AddLinks'));
-const Settings = lazy(() => import('./Settings'));
+import AddLinks from './AddLinks';
+import Settings from './Settings';
 
 class Admin extends Component {
   state = { toastShown: false, toastType: '', toastMessage: '' };
@@ -79,10 +78,8 @@ class Admin extends Component {
           </div>
         </div>
 
-        <Suspense fallback={<img className="loading" src={loadingSvg} alt="loading" />}>
-          {this.props.page === 'links' ? <AddLinks /> : null}
-          {this.props.page === 'settings' ? <Settings /> : null}
-        </Suspense>
+        {this.props.page === 'links' ? <AddLinks /> : null}
+        {this.props.page === 'settings' ? <Settings /> : null}
 
         <div
           className={'toast ' + this.state.toastType + ' ' + (this.state.toastShown ? 'shown' : '')}
