@@ -37,6 +37,6 @@ main.signin > .card > .card-title {
   text-align: center;
 }
 
-.card.signin input {
+.card.signin .form-input > input {
   color: #fff;
 }
