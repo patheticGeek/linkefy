@@ -1,8 +1,7 @@
-/* eslint-disable */
 import firebase from 'firebase/app';
-import firestore from 'firebase/firestore';
-import auth from 'firebase/auth';
-import storage from 'firebase/storage';
+import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/storage';
 
 const config = {
   apiKey: 'AIzaSyA14hPpGo27Q6DWMvo-Y42eMrBbswuyQPA',
