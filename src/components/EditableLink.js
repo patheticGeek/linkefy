@@ -4,20 +4,14 @@ export default class EditableLink extends Component {
   constructor() {
     super();
     this.state = {
-      unsaved: false,
-      key: 0,
-      title: '',
-      animation: '',
-      redirect: '',
-      created: '',
-      shown: '',
+      unsaved: false, key: 0, title: '',
+      animation: '', redirect: '',
+      created: '', shown: '',
       thumbnail: '',
-      newTitle: '',
-      newRedirect: '',
-      newShown: '',
-      newThumbnail: '',
+      newTitle: '', newRedirect: '',
+      newShown: '', newThumbnail: '',
       editOption: ''
-    };
+    }; //prettier-ignore
   }
 
   componentDidMount() {

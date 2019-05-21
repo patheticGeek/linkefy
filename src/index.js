@@ -11,6 +11,7 @@ import { loadState, saveState } from './localStorage';
 import firebase from './firebase';
 import loadingSvg from './assets/loading.svg';
 import './assets/index.css';
+import './assets/animate.css';
 
 const Home = lazy(() => import('./components/Home'));
 const Signin = lazy(() => import('./components/Signin'));
