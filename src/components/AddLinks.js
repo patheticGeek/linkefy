@@ -17,7 +17,13 @@ class AddLinks extends Component {
   };
 
   componentDidMount() {
-    this.setState({ uid: this.props.user.uid, links: this.props.user.links });
+    let orderedLinks = {};
+    Object.keys(this.props.user.links)
+      .sort((a, b) => b - a)
+      .forEach(key => {
+        orderedLinks[key] = this.props.user.links[key];
+      });
+    this.setState({ uid: this.props.user.uid, links: orderedLinks });
   }
 
   componentWillReceiveProps(newProps) {
@@ -48,7 +54,7 @@ class AddLinks extends Component {
         .replace('T', ' ');
       const timestamp = new Date().getTime();
       let redirect = this.state.linkRedirect;
-      if (!redirect.includes('https://') || !redirect.includes('http://')) {
+      if (!redirect.includes('https://') & !redirect.includes('http://')) {
         redirect = 'https://' + redirect;
       }
       const newLink = {
