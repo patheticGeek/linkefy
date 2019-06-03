@@ -12,7 +12,6 @@ import firebase from './firebase';
 import loadingSvg from './assets/loading.svg';
 import './assets/index.css';
 import './assets/animate.css';
-import Test from './components/Test';
 
 const Home = lazy(() => import('./components/Home'));
 const Signin = lazy(() => import('./components/Signin'));
@@ -49,15 +48,14 @@ class Router extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Suspense fallback={<img className="loading" src={loadingSvg} alt="loading" />}>
+        <Suspense fallback={<img className='loading' src={loadingSvg} alt='loading' />}>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/signin" component={Signin} />
-            <Route exact path="/admin" render={() => <Admin page="links" />} />
-            <Route exact path="/admin/analytics" render={() => <Admin page="analytics" />} />
-            <Route exact path="/admin/settings" render={() => <Admin page="settings" />} />
-            <Route exact path="/admin/test" render={() => <Test />} />
-            <Route exact path="/:username" component={UserProfile} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/signin' component={Signin} />
+            <Route exact path='/admin' render={() => <Admin page='links' />} />
+            <Route exact path='/admin/analytics' render={() => <Admin page='analytics' />} />
+            <Route exact path='/admin/settings' render={() => <Admin page='settings' />} />
+            <Route exact path='/:username' component={UserProfile} />
           </Switch>
         </Suspense>
       </BrowserRouter>
