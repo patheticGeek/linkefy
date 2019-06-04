@@ -47,8 +47,11 @@ export const login = user => dispatch => {
           buttonType: 'solid',
           backgroundType: 'color',
           backgroundColor: '#fff',
-          backgroundGradient: '',
-          backgroundImage: '', socialLinks: {}
+          backgroundGradient: {
+            direction: 'to right',
+            startColor: 'red',
+            stopColor: 'yellow'
+          }, backgroundImage: '', socialLinks: {}
           }); //prettier-ignore
         dispatch({
           type: USER_LOGIN,
@@ -59,7 +62,11 @@ export const login = user => dispatch => {
           buttonType: 'solid',
           backgroundType: 'color',
           backgroundColor: '#fff',
-          backgroundGradient: '',
+          backgroundGradient: {
+            direction: 'to right',
+            startColor: 'red',
+            stopColor: 'yellow'
+          },
             backgroundImage: '', socialLinks: {}}
         }); //prettier-ignore
       }

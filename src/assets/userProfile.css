@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   padding: 12px 24px;
-  background: #fff;
   min-height: calc(100vh - 24px);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   --primary-color: #3d3d3d;
   --secondary-color: #fff;
   --shadow-color: #3d3d3d4d;
+}
+.user-profile.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .user-profile > * {
   color: var(--primary-color);

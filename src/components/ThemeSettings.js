@@ -13,7 +13,9 @@ class ThemeSettings extends Component {
     buttonType: '',
     backgroundType: '',
     backgroundColor: '',
-    backgroundGradient: '',
+    gradientDirection: 'to right',
+    gradientStartColor: 'red',
+    gradientStopColor: 'yellow',
     backgroundImage: '',
     bgiUploading: false,
     bgiProgress: false,
@@ -33,7 +35,7 @@ class ThemeSettings extends Component {
       event.target.name === 'buttonType' ||
       event.target.name === 'backgroundType' ||
       event.target.name === 'backgroundColor' ||
-      event.target.name === 'backgroundGradient' ||
+      event.target.name.includes('gradient') ||
       event.target.name === 'backgroundImage'
     ) {
       this.setState({ [event.target.name]: event.target.value, themeNotUpdated: true });
@@ -54,8 +56,7 @@ class ThemeSettings extends Component {
     }
   };
 
-  handlebgiUploadStart = () =>
-    this.setState({ bgiUploading: true, bgiProgress: 0, bgiError: false });
+  handlebgiUploadStart = () => this.setState({ bgiUploading: true, bgiProgress: 0, bgiError: false });
 
   handlebgiProgress = bgiProgress => this.setState({ bgiProgress });
 
@@ -81,7 +82,6 @@ class ThemeSettings extends Component {
     var r, g, b, hsp;
     if (color.match(/^rgb/)) {
       color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);
-
       r = color[1];
       g = color[2];
       b = color[3];
@@ -101,7 +101,7 @@ class ThemeSettings extends Component {
 
   updateTheme = () => {
     const { uid, primaryColor, buttonType,
-      backgroundType, backgroundColor, backgroundGradient, backgroundImage
+      backgroundType, backgroundColor, backgroundImage, gradientDirection, gradientStartColor, gradientStopColor
     } = this.state; //prettier-ignore
     let secondaryColor = '#fff';
     const lightordark = this.lightOrDark(primaryColor);
@@ -114,7 +114,9 @@ class ThemeSettings extends Component {
       buttonType,
       backgroundType,
       backgroundColor,
-      backgroundGradient,
+      gradientDirection,
+      gradientStartColor,
+      gradientStopColor,
       backgroundImage
     });
     this.setState({ themeNotUpdated: false, secondaryColor });
@@ -123,77 +125,120 @@ class ThemeSettings extends Component {
   render() {
     return (
       <>
-        <div className="card">
-          <div className="card-title">
+        <div className='card'>
+          <div className='card-title'>
             <h2>Theming options</h2>
           </div>
-          <div className="card-body">
-            <div className="input-group">
-              <label htmlFor="primaryColor">Accent Color: </label>
+          <div className='card-body'>
+            <div className='input-group'>
+              <label htmlFor='primaryColor'>Accent Color: </label>
               <input
-                type="text"
-                name="primaryColor"
-                className="form-input limit-width"
-                placeholder="Accent color (in hex, rgb, rgba, hsl)"
+                type='text'
+                name='primaryColor'
+                className='form-input limit-width'
+                placeholder='Accent color (in hex, rgb, rgba, hsl)'
                 defaultValue={this.state.primaryColor}
                 onChange={this.handleInput}
               />
             </div>
 
-            <div className="input-group">
-              <label htmlFor="buttonType">Button Type: </label>
+            <div className='input-group'>
+              <label htmlFor='buttonType'>Button Type: </label>
               <select
-                name="buttonType"
+                name='buttonType'
                 onChange={this.handleInput}
                 value={this.state.buttonType}
-                className="form-input limit-width"
+                className='form-input limit-width'
               >
-                <option value="solid">Solid</option>
-                <option value="outline">Outline</option>
-                <option value="round-solid">Round solid</option>
-                <option value="round-outline">Round outline</option>
-                <option value="semitransparent-white">Semitransparent white</option>
-                <option value="semitransparent-black">Semitransparent black</option>
+                <option value='solid'>Solid</option>
+                <option value='outline'>Outline</option>
+                <option value='round-solid'>Round solid</option>
+                <option value='round-outline'>Round outline</option>
+                <option value='semitransparent-white'>Semitransparent white</option>
+                <option value='semitransparent-black'>Semitransparent black</option>
               </select>
             </div>
 
-            <div className="input-group">
-              <label htmlFor="backgroundType">Background Type: </label>
+            <div className='input-group'>
+              <label htmlFor='backgroundType'>Background Type: </label>
               <select
-                name="backgroundType"
+                name='backgroundType'
                 onChange={this.handleInput}
                 value={this.state.backgroundType}
-                className="form-input limit-width"
+                className='form-input limit-width'
               >
-                <option value="color">Color</option>
-                <option value="image">Image</option>
+                <option value='color'>Color</option>
+                <option value='gradient'>Gradient</option>
+                <option value='image'>Image</option>
               </select>
             </div>
 
             {this.state.backgroundType === 'color' && (
-              <div className="input-group">
-                <label htmlFor="backgroundColor">Background Color: </label>
+              <div className='input-group'>
+                <label htmlFor='backgroundColor'>Background Color: </label>
                 <input
-                  type="text"
-                  name="backgroundColor"
-                  className="form-input limit-width"
-                  placeholder="Background color (in hex, rgb, rgba, hsl)"
+                  type='text'
+                  name='backgroundColor'
+                  className='form-input limit-width'
+                  placeholder='Background color (in hex, rgb, rgba, hsl)'
                   defaultValue={this.state.backgroundColor}
                   onChange={this.handleInput}
                 />
               </div>
             )}
 
+            {this.state.backgroundType === 'gradient' && (
+              <>
+                <div className='input-group'>
+                  <label>Gradient Direction: </label>
+                  <select
+                    name='gradientDirection'
+                    onChange={this.handleInput}
+                    value={this.state.gradientDirection}
+                    className='form-input limit-width'
+                  >
+                    <option value='to left'>To left</option>
+                    <option value='to right'>To right</option>
+                    <option value='to top'>To top</option>
+                    <option value='to bottom'>To bottom</option>
+                  </select>
+                </div>
+                <div className='input-group'>
+                  <label>Gradient Start Color: </label>
+                  <input
+                    type='text'
+                    name='gradientStartColor'
+                    className='form-input limit-width'
+                    placeholder='Start color (in hex, rgb, rgba, hsl)'
+                    defaultValue={this.state.gradientStartColor}
+                    onChange={this.handleInput}
+                  />
+                </div>
+
+                <div className='input-group'>
+                  <label>Gradient Stop Color: </label>
+                  <input
+                    type='text'
+                    name='gradientStopColor'
+                    className='form-input limit-width'
+                    placeholder='End color (in hex, rgb, rgba, hsl)'
+                    defaultValue={this.state.gradientStopColor}
+                    onChange={this.handleInput}
+                  />
+                </div>
+              </>
+            )}
+
             {this.state.backgroundType === 'image' && (
-              <div className="avatar-settings">
-                <img src={this.state.backgroundImage} className="bgimg" alt="user" />
-                <div className="edit">
-                  <label htmlFor="background">Background Image: </label>
-                  <div className="uploadButtonWrapper">
+              <div className='avatar-settings'>
+                <img src={this.state.backgroundImage} className='bgimg' alt='user' />
+                <div className='edit'>
+                  <label htmlFor='background'>Background Image: </label>
+                  <div className='uploadButtonWrapper'>
                     <button>Upload new image</button>
                     <FileUploader
-                      accept="image/png,image/jpeg"
-                      name="background"
+                      accept='image/png,image/jpeg'
+                      name='background'
                       storageRef={firebase.storage().ref('backgrounds')}
                       onUploadStart={this.handlebgiUploadStart}
                       onUploadError={this.handlebgiUploadError}
@@ -203,23 +248,18 @@ class ThemeSettings extends Component {
                     />
                   </div>
                   {this.state.bgiUploading ? (
-                    <div className="progress">
-                      <div
-                        className="progress-bar"
-                        style={{ width: this.state.bgiProgress + '%' }}
-                      />
+                    <div className='progress'>
+                      <div className='progress-bar' style={{ width: this.state.bgiProgress + '%' }} />
                     </div>
                   ) : null}
-                  {this.state.bgiError ? (
-                    <div className="error-text">Cannot upload image</div>
-                  ) : null}
+                  {this.state.bgiError ? <div className='error-text'>Cannot upload image</div> : null}
                 </div>
               </div>
             )}
           </div>
-          <div className="card-action">
+          <div className='card-action'>
             {this.state.themeNotUpdated && (
-              <button className="primary" onClick={this.updateTheme}>
+              <button className='primary' onClick={this.updateTheme}>
                 Update theme
               </button>
             )}
@@ -227,10 +267,18 @@ class ThemeSettings extends Component {
         </div>
 
         <div
-          className="card demo user-profile"
+          className='card demo user-profile'
           style={{
             backgroundColor: this.state.backgroundType === 'color' && this.state.backgroundColor,
-            background: this.state.backgroundType === 'gradient' && this.state.backgroundGradient,
+            background:
+              this.state.backgroundType === 'gradient' &&
+              'linear-gradient(' +
+                this.state.gradientDirection +
+                ', ' +
+                this.state.gradientStartColor +
+                ', ' +
+                this.state.gradientStopColor +
+                ')',
             backgroundImage:
               this.state.backgroundType === 'image' && 'url("' + this.state.backgroundImage + '")',
             '--primary-color': this.state.primaryColor,
@@ -238,11 +286,11 @@ class ThemeSettings extends Component {
             '--shadow-color': this.state.shadowColor
           }}
         >
-          <div className="user">
-            <img src={this.state.avatar} alt="user" />
+          <div className='user'>
+            <img src={this.state.avatar} alt='user' />
             <h2>{this.state.name}</h2>
           </div>
-          <div className="card-body">
+          <div className='card-body'>
             <Buttons
               link={{
                 animation: 'none',
@@ -278,18 +326,18 @@ class ThemeSettings extends Component {
               buttonType={this.state.buttonType}
             />
 
-            <div className="user-socialLinks" style={{ marginTop: '0px' }}>
-              <a className="user-social" href="/admin/settings">
-                <i className="flaticon facebook" />
+            <div className='user-socialLinks' style={{ marginTop: '0px' }}>
+              <a className='user-social' href='/admin/settings'>
+                <i className='flaticon facebook' />
               </a>
-              <a className="user-social" href="/admin/settings">
-                <i className="flaticon twitter" />
+              <a className='user-social' href='/admin/settings'>
+                <i className='flaticon twitter' />
               </a>
-              <a className="user-social" href="/admin/settings">
-                <i className="flaticon reddit" />
+              <a className='user-social' href='/admin/settings'>
+                <i className='flaticon reddit' />
               </a>
-              <a className="user-social" href="/admin/settings">
-                <i className="flaticon whatsapp" />
+              <a className='user-social' href='/admin/settings'>
+                <i className='flaticon whatsapp' />
               </a>
             </div>
           </div>
