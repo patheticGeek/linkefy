@@ -6,8 +6,8 @@ const Buttons = props => {
   if (!shown) return null;
   return (
     <a className={'user-button ' + buttonType + ' animated ' + animation} href={redirect}>
-      {thumbnail !== '' ? <img src={thumbnail} alt="thumbnail" /> : null}
-      <span className="user-button-text">{title}</span>
+      {thumbnail !== '' ? <img src={thumbnail} alt='thumbnail' /> : null}
+      <span className='user-button-text'>{title}</span>
     </a>
   );
 };

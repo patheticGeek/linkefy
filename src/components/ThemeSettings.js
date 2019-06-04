@@ -156,6 +156,12 @@ class ThemeSettings extends Component {
                 <option value='round-outline'>Round outline</option>
                 <option value='semitransparent-white'>Semitransparent white</option>
                 <option value='semitransparent-black'>Semitransparent black</option>
+                <option value='effect-btn type1'>Effect Type 1</option>
+                <option value='effect-btn type2'>Effect Type 2</option>
+                <option value='effect-btn type3'>Effect Type 3</option>
+                <option value='btn-bg-effect from-top'>Background down from top</option>
+                <option value='btn-bg-effect from-middle'>Background down from middle</option>
+                <option value='btn-bg-effect from-bottom'>Background down from bottom</option>
               </select>
             </div>
 
