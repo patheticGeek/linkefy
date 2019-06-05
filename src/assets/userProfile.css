@@ -1,7 +1,7 @@
 .user-profile {
   display: flex;
   flex-direction: column;
-  padding: 12px 24px;
+  padding: 12px 0px;
   min-height: calc(100vh - 24px);
   --primary-color: #3d3d3d;
   --secondary-color: #fff;
@@ -27,6 +27,7 @@
 .user-profile > .user {
   display: flex;
   flex-direction: column;
+  margin-bottom: 32px;
 }
 .user-profile > .user > * {
   margin: 8px auto;
@@ -140,7 +141,7 @@
   cursor: pointer;
   outline: none;
   font-size: 18px;
-  margin: 1em 0.8em;
+  margin-bottom: 32px;
 }
 .effect-btn.type1 {
   color: var(--primary-color);
@@ -242,11 +243,11 @@
   padding: 1em 2em;
   transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
   cursor: pointer;
-  border: 0px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-bottom: 32px;
   color: var(--primary-color);
 }
 .btn-bg-effect:hover {
@@ -257,7 +258,7 @@
 .btn-bg-effect:after {
   content: '';
   position: absolute;
-  transition: inherit;
+  patheticgeektransition: inherit;
   z-index: 1;
 }
 .btn-bg-effect:hover:before {
@@ -363,4 +364,18 @@
 }
 .user-social:last-of-type {
   margin-right: auto;
+}
+
+@media screen and (max-width: 450px) {
+  .btn-bg-effect,
+  .effect-btn {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .btn-bg-effect,
+  .effect-btn {
+    max-width: 200px;
+  }
 }

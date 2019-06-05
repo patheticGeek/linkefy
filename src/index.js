@@ -17,6 +17,7 @@ const Home = lazy(() => import('./components/Home'));
 const Signin = lazy(() => import('./components/Signin'));
 const Admin = lazy(() => import('./components/Admin'));
 const UserProfile = lazy(() => import('./components/UserProfile'));
+const NotFound = lazy(() => import('./components/NotFound'));
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistedState = loadState();
@@ -56,6 +57,7 @@ class Router extends React.Component {
             <Route exact path='/admin/analytics' render={() => <Admin page='analytics' />} />
             <Route exact path='/admin/settings' render={() => <Admin page='settings' />} />
             <Route exact path='/:username' component={UserProfile} />
+            <Route component={NotFound} />
           </Switch>
         </Suspense>
       </BrowserRouter>

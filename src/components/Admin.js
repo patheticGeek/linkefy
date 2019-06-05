@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import '../assets/animate.css';
-import '../assets/admin.css';
 import AddLinks from './AddLinks';
 import Settings from './Settings';
+import '../assets/animate.css';
+import '../assets/admin.css';
 
 class Admin extends Component {
   state = { toastShown: false, toastType: '', toastMessage: '' };
@@ -21,17 +21,17 @@ class Admin extends Component {
   }
 
   render() {
-    if (!this.props.logedin) return <Redirect to="/" />;
-    if (this.props.user === null) return <Redirect to="/" />;
-    if (this.props.user.username === '') return <Redirect to="/signin" />;
+    if (!this.props.logedin) return <Redirect to='/' />;
+    if (this.props.user === null) return <Redirect to='/' />;
+    if (this.props.user.username === '') return <Redirect to='/signin' />;
     return (
-      <main className="admin">
-        <div className="admin-nav">
-          <div className="logo">
-            <img src="/icon_512.png" alt="logo" />
-          </div>
-          <div className="admin-links">
-            <div className="admin-nav-bio-link mobile">
+      <main className='admin'>
+        <div className='admin-nav'>
+          <Link to='/' className='logo'>
+            <img src='/icon_512.png' alt='logo' />
+          </Link>
+          <div className='admin-links'>
+            <div className='admin-nav-bio-link mobile'>
               <h3>My Bio Link: </h3>
               <div>
                 <a href={'https://linkefy.tk/' + this.props.user.username}>
@@ -39,13 +39,13 @@ class Admin extends Component {
                 </a>
               </div>
             </div>
-            <div className="nav">
+            <div className='nav'>
               <Link
                 className={this.props.page === 'links' ? 'admin-nav-link active' : 'admin-nav-link'}
-                to="/admin"
+                to='/admin'
               >
-                <span className="admin-nav-link-text">My Links</span>
-                <span className="admin-nav-link-line" />
+                <span className='admin-nav-link-text'>My Links</span>
+                <span className='admin-nav-link-line' />
               </Link>
               {/* <Link
                 className={
@@ -57,18 +57,16 @@ class Admin extends Component {
                 <span className="admin-nav-link-line" />
               </Link> */}
               <Link
-                className={
-                  this.props.page === 'settings' ? 'admin-nav-link active' : 'admin-nav-link'
-                }
-                to="/admin/settings"
+                className={this.props.page === 'settings' ? 'admin-nav-link active' : 'admin-nav-link'}
+                to='/admin/settings'
               >
-                <span className="admin-nav-link-text">Settings</span>
-                <span className="admin-nav-link-line" />
+                <span className='admin-nav-link-text'>Settings</span>
+                <span className='admin-nav-link-line' />
               </Link>
             </div>
           </div>
-          <div className="admin-nav-divider" />
-          <div className="admin-nav-bio-link">
+          <div className='admin-nav-divider' />
+          <div className='admin-nav-bio-link'>
             <div>
               <h3>My Bio Link: </h3>
               <a href={'https://linkefy.tk/' + this.props.user.username}>
@@ -81,11 +79,9 @@ class Admin extends Component {
         {this.props.page === 'links' ? <AddLinks /> : null}
         {this.props.page === 'settings' ? <Settings /> : null}
 
-        <div
-          className={'toast ' + this.state.toastType + ' ' + (this.state.toastShown ? 'shown' : '')}
-        >
+        <div className={'toast ' + this.state.toastType + ' ' + (this.state.toastShown ? 'shown' : '')}>
           <div className={'icon ' + this.state.toastType} />
-          <div className="text">{this.state.toastMessage}</div>
+          <div className='text'>{this.state.toastMessage}</div>
         </div>
       </main>
     );

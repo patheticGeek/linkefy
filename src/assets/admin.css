@@ -91,6 +91,14 @@
   display: none;
 }
 
+.addLinks > .card:first-of-type > .card-title {
+  display: flex;
+  flex-direction: row;
+}
+.addLinks > .card:first-of-type > .card-title > .placeholder {
+  flex-basis: 1;
+}
+
 .settings {
   display: flex;
   flex-direction: column;

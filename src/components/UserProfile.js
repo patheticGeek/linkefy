@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import userImage from '../assets/ic_user.png';
-import '../assets/userProfile.css';
+import React, { Component, Suspense, lazy } from 'react';
 import Buttons from './Buttons';
 import loadingSvg from '../assets/loading.svg';
 import firebase from '../firebase.js';
-import '../assets/notfound.css';
+import '../assets/userProfile.css';
+const NotFound = lazy(() => import('./NotFound'));
 
 export default class UserProfile extends Component {
   state = {
     username: this.props.match.params.username,
     name: '',
-    avatar: userImage,
+    avatar: '',
     links: {},
     primaryColor: '',
     secondaryColor: '',
@@ -61,17 +60,9 @@ export default class UserProfile extends Component {
 
     if (this.state.notFound) {
       return (
-        <div id='notfound'>
-          <div className='notfound'>
-            <div className='notfound-404'>
-              <h1>
-                4<span>0</span>4
-              </h1>
-            </div>
-            <p>The page you are looking for cannot be found.</p>
-            <a href='/'>home page</a>
-          </div>
-        </div>
+        <Suspense fallback={<p>Not Found</p>}>
+          <NotFound />
+        </Suspense>
       );
     }
 

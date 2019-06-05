@@ -102,22 +102,25 @@ main.home > header:first-of-type {
   opacity: 0.1;
 }
 
-main.home > header > .container {
+main.home > .page-header > .container {
   margin: auto;
   text-align: center;
 }
-main.home > header > .container > h1 {
+main.home > .page-header > .container > img {
+  width: 200px;
+  height: auto;
+}
+main.home > .page-header > .container > h1 {
   color: #ffffff;
   font-weight: 600;
   text-transform: capitalize;
   font-size: 4em;
   line-height: 1.05;
-  margin-bottom: 30px;
 }
-main.home > header > .container > h3 {
+main.home > .page-header > .container > h3 {
   font-size: 1.4em;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Raleway', sans-serif;
 }
 

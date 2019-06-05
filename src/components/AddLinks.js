@@ -105,68 +105,84 @@ class AddLinks extends Component {
 
   render() {
     return (
-      <main className="addLinks">
-        <div className="card">
-          <div className="card-title">
-            <h1>Add link</h1>
+      <main className='addLinks'>
+        <div className='card'>
+          <div className='card-title'>
+            <h1 className={'animated ' + this.state.linkAnimation}>Add link</h1>
+            <div className='placeholder' />
           </div>
-          <div className="card-body">
-            <div className="input-group">
-              <label htmlFor="linkText">Title: </label>
+          <div className='card-body'>
+            <div className='input-group'>
+              <label htmlFor='linkText'>Title: </label>
               <input
-                type="text"
-                name="linkTitle"
-                className={
-                  this.state.titleEmpty ? 'form-input limit-width error' : 'form-input limit-width'
-                }
-                placeholder="Title"
+                type='text'
+                name='linkTitle'
+                className={this.state.titleEmpty ? 'form-input limit-width error' : 'form-input limit-width'}
+                placeholder='Title'
                 onChange={this.handleInput}
               />
             </div>
-            <div className="input-group">
-              <label htmlFor="linkText">URL: </label>
+            <div className='input-group'>
+              <label htmlFor='linkText'>URL: </label>
               <input
-                type="text"
-                name="linkRedirect"
+                type='text'
+                name='linkRedirect'
                 className={
-                  this.state.redirectEmpty
-                    ? 'form-input limit-width error'
-                    : 'form-input limit-width'
+                  this.state.redirectEmpty ? 'form-input limit-width error' : 'form-input limit-width'
                 }
-                placeholder="http://url"
+                placeholder='http://url'
                 onChange={this.handleInput}
               />
             </div>
-            <div className="input-group">
-              <label htmlFor="linkAnimation">Animation: </label>
+            <div className='input-group'>
+              <label htmlFor='linkAnimation'>Animation: </label>
               <select
-                name="linkAnimation"
+                name='linkAnimation'
                 onChange={this.handleInput}
                 defaultValue={this.state.linkAnimation}
-                className="form-input limit-width"
+                className='form-input limit-width'
               >
-                <option value="none">None</option>
-                <option value="bounce">Bounce</option>
-                <option value="flash">Flash</option>
-                <option value="pulse">Pulse</option>
-                <option value="rubberBand">RubberBand</option>
-                <option value="shake">Shake</option>
-                <option value="swing">Swing</option>
-                <option value="tada">Tada</option>
-                <option value="wobble">Wobble</option>
-                <option value="jello">Jello</option>
-                <option value="heartBeat">HeartBeat</option>
-                <option value="fadeIn">FadeIn</option>
+                <option value='none'>None</option>
+                <optgroup label='Attention Seekers'>
+                  <option value='bounce'>bounce</option>
+                  <option value='flash'>flash</option>
+                  <option value='pulse'>pulse</option>
+                  <option value='rubberBand'>rubberBand</option>
+                  <option value='shake'>shake</option>
+                  <option value='swing'>swing</option>
+                  <option value='tada'>tada</option>
+                  <option value='wobble'>wobble</option>
+                  <option value='jello'>jello</option>
+                  <option value='heartBeat'>heartBeat</option>
+                </optgroup>
+                <optgroup label='Bouncing Entrances'>
+                  <option value='bounceIn'>bounceIn</option>
+                  <option value='bounceInDown'>bounceInDown</option>
+                  <option value='bounceInLeft'>bounceInLeft</option>
+                  <option value='bounceInRight'>bounceInRight</option>
+                  <option value='bounceInUp'>bounceInUp</option>
+                </optgroup>
+                <optgroup label='Zoom Entrances'>
+                  <option value='zoomIn'>zoomIn</option>
+                  <option value='zoomInDown'>zoomInDown</option>
+                  <option value='zoomInLeft'>zoomInLeft</option>
+                  <option value='zoomInRight'>zoomInRight</option>
+                  <option value='zoomInUp'>zoomInUp</option>
+                </optgroup>
+                <optgroup label='Specials'>
+                  <option value='jackInTheBox'>jackInTheBox</option>
+                  <option value='rollIn'>rollIn</option>
+                </optgroup>
               </select>
             </div>
-            <button className="button primary right" onClick={this.createNewLink}>
+            <button className='button primary right' onClick={this.createNewLink}>
               Add
             </button>
           </div>
         </div>
-        <div className="created-links">
+        <div className='created-links'>
           {this.compareMaps(this.state.links, {}) ? (
-            <div className="addLinks-message">No links yet, start adding links!</div>
+            <div className='addLinks-message'>No links yet, start adding links!</div>
           ) : null}
           {Object.entries(this.state.links).map(([key, link]) => {
             return (

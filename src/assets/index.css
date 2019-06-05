@@ -60,6 +60,9 @@ nav {
   position: fixed;
 }
 nav.collapsed {
+  -webkit-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.75);
   background-color: #1d8cf8;
   padding-top: 0px;
 }
@@ -569,14 +572,6 @@ label {
   background-position: top right;
 }
 
-@media screen and (max-width: 600px) {
-  .nav-link {
-    display: none;
-  }
-  .nav-content {
-    padding: 12px 0px;
-  }
-}
 @media screen and (max-width: 850px) {
   .toast {
     left: 0px;
@@ -584,5 +579,18 @@ label {
   }
   .toast.shown {
     bottom: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav-link {
+    padding: 8px 12px;
+  }
+  .nav-content {
+    padding: 12px 0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .card {
+    width: 100%;
   }
 }
