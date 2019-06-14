@@ -45,7 +45,18 @@ class Home extends Component {
               )}
             </div>
           </header>
-          <header>sd</header>
+          <header id='features'>
+            <section className='feature'>
+              <div className='text'>
+                <h2>Full control of the links</h2>
+                <p>
+                  Add an icon to show a peek of the product/page you are linking and an animation to the link
+                  to grab attention of the user.
+                </p>
+              </div>
+              <div className='image' />
+            </section>
+          </header>
         </main>
       </React.Fragment>
     );

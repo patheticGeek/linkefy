@@ -17,12 +17,7 @@ main.home > header {
   padding: 12px 24px;
   padding-top: 70px;
   position: relative;
-  height: calc(100vh - 94px);
   width: calc(100% - 48px);
-}
-main.home > header:first-of-type {
-  padding: 12px 24px;
-  height: calc(100vh - 24px);
 }
 
 .squares {
@@ -102,6 +97,10 @@ main.home > header:first-of-type {
   opacity: 0.1;
 }
 
+main.home > .page-header {
+  padding: 12px 24px;
+  height: calc(100vh - 24px);
+}
 main.home > .page-header > .container {
   margin: auto;
   text-align: center;
@@ -122,6 +121,28 @@ main.home > .page-header > .container > h3 {
   color: #ffffff;
   font-weight: 400;
   font-family: 'Raleway', sans-serif;
+}
+
+header.features {
+  display: flex;
+  flex-direction: column;
+}
+header#features > .feature {
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  margin: 12px auto;
+  flex-wrap: wrap;
+}
+header#features > .feature > .text {
+  width: 60%;
+  margin: auto;
+}
+header#features > .feature > .text:first-child {
+  margin-left: 0px;
+}
+header#features > .feature > .text:last-child {
+  margin-right: 0px;
 }
 
 @keyframes move-left-right {

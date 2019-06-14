@@ -46,6 +46,14 @@ h5,
 h5 {
   margin: 12px 0px;
   font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.6rem;
 }
 
 nav {
@@ -170,7 +178,11 @@ button.warning,
 }
 .card-title {
   padding: 16px 24px 0;
+  font-weight: 500;
   border: 0;
+}
+.card-title > * {
+  font-weight: 600;
 }
 .card-body {
   display: flex;

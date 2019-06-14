@@ -258,7 +258,7 @@
 .btn-bg-effect:after {
   content: '';
   position: absolute;
-  patheticgeektransition: inherit;
+  transition: inherit;
   z-index: 1;
 }
 .btn-bg-effect:hover:before {
