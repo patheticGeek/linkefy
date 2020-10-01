@@ -9,6 +9,7 @@ export default class Navbar extends Component {
   }
   componentDidMount() {
     window.addEventListener('scroll', this.changeColor);
+    console.log()
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.changeColor);
@@ -38,6 +39,9 @@ export default class Navbar extends Component {
             </a>
             <a href="#features" className="nav-link">
               <span>Features</span>
+            </a>
+            <a href="#blog" className="nav-link">
+              <span>Blog</span>
             </a>
             <a href="#contact" className="nav-link">
               <span>Contact</span>
