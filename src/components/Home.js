@@ -25,6 +25,7 @@ class Home extends Component {
             <div className="squares square5" />
             <div className="squares square6" />
             <div className="squares square7" />
+            <div className="squares square8" />
             <div className="container">
               <img src="./icon_512.png" alt="logo" />
               <h1>Linkefy</h1>
